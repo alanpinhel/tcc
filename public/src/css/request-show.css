@@ -1,0 +1,12 @@
+@media only screen and (max-width: 992px) {
+  #requestShow .card .card-title {
+    font-size: 18px;
+    font-weight: 800; }
+  #requestShow .card .card-content {
+    font-size: 14px; } }
+@media only screen and (min-width: 993px) {
+  #requestShow .card .card-title {
+    font-size: 24px;
+    font-weight: 800; }
+  #requestShow .card .card-content {
+    font-size: 15px; } }

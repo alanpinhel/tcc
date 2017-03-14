@@ -1,0 +1,14 @@
+# Folders
+.c9
+.gulp-scss-cache
+.sass-cache
+data
+node_modules
+public/upload
+
+# Files
+gulpfile.js
+mongod
+*.log
+.nodemonignore
+*.map

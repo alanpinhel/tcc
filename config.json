@@ -1,0 +1,13 @@
+{
+  "SECRET": "dadivar",
+  "KEY": "dadivar.sid",
+  "MONGODB": {
+    "development": "mongodb://localhost:27017/dadivar",
+    "test": "mongodb://localhost:27017/dadivar_test",
+    "production": "mongodb://mongodb103703-dadivar.jelasticlw.com.br/dadivar"
+  },
+  "DOMAIN": {
+    "development": "dadivar-alanpinhel.c9users.io",
+    "production": "web.dadivarbeta.com.br"
+  }
+}

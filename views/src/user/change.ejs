@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt" id="change">
+<head>
+  <%- include ../lib/meta %>
+  <title>Altere sua conta</title>
+  <%- include ../lib/link %>
+</head>
+<body>
+  <%- include ../lib/navbar %>
+  <main>
+    <div class="container">
+      <div class="row center-align">
+        <h5 class="light">Altere sua conta!</h5>
+      </div>
+      <div class="row">
+        <form class="col s12 m8 offset-m2 l6 offset-l3" method="post" action="/change?_method=put">
+          <input type="hidden" name="_csrf" value="<%- _csrf %>">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="ident" name="user[ident]" type="text" class="validate" pattern="^([1-9]{1}[0-9]{1}[0-9]{9}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$)" disabled required value="<%- ident %>">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="name" name="user[name]" type="text" class="validate" pattern="^[a-zA-Z\sáÁãÃâÂàÀéÉêÊíÍóÓõÕôÔúÚçÇ]{3,}$" required value="<%- name %>">
+              <label id="lbName" for="name">Nome</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <button type="submit" id="submit" class="btn-large waves-effect full-width">SALVAR CONTA</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <p class="center-align"><a href="/recover">Redefinir senha</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <%- include ../lib/js %>

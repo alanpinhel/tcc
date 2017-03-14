@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt" id="signup">
+<head>
+  <%- include ../lib/meta %>
+  <title>Crie sua conta</title>
+  <%- include ../lib/link %>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="logo"></div>
+      </div>
+      <div class="row center-align">
+        <h5 class="light">Crie sua conta!</h5>
+        <p>No&nbsp;<b>Dadivar</b>&nbsp;você pode doar, ganhar e concorrer presentes de graça.</p>
+      </div>
+      <div class="row">
+        <form class="col s12 m8 offset-m2 l6 offset-l3" method="post" action="/signup">
+          <input type="hidden" name="_csrf" value="<%- _csrf %>">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="ident" name="user[ident]" type="text" class="validate" pattern="^([1-9]{1}[0-9]{1}[0-9]{9}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$)" required>
+              <label id="lbIdent" for="ident">E-mail ou celular</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="name" name="user[name]" type="text" class="validate" pattern="^[a-zA-Z\sáÁãÃâÂàÀéÉêÊíÍóÓõÕôÔúÚçÇ]{3,}$" required>
+              <label id="lbName" for="name">Nome</label>
+            </div>
+          </div>
+          <input id="pass" name="user[pass]" type="hidden">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li id="passHelp">
+              <div class="collapsible-header center-align">Como funciona a senha?</div>
+              <div class="collapsible-body">
+                <div class="video-container">
+                  <iframe id="videoHelp" frameborder="0" allowFullScreen></iframe>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="section center-align">
+            <div class="row">
+              <div class="col s4">
+                <a id="1" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+              <div class="col s4">
+                <a id="2" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+              <div class="col s4">
+                <a id="3" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <a id="4" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+              <div class="col s4">
+                <a id="5" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+              <div class="col s4">
+                <a id="6" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <a id="7" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+              <div class="col s4">
+                <a id="8" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+              <div class="col s4">
+                <a id="9" class="btn-large waves-effect modal-trigger btn-pass white" href="#modalColor"></a>
+              </div>
+            </div>
+          </div>
+          <div class="row center-align">
+            <div class="col s12">
+              <button type="submit" id="submit" class="btn-large waves-effect full-width">CRIAR CONTA</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row center-align">
+        <p>Já tem conta?<a href="/login">&nbsp;Acesse</a>.</p>
+      </div>
+      <div id="modalColor" class="modal bottom-sheet">
+        <div class="modal-content center">
+          <div class="row">
+            <div class="col s3">
+              <a id="red" class="modal-action modal-close waves-effect btn-large red btn-color"></a>
+            </div>
+            <div class="col s3">
+              <a id="green" class="modal-action modal-close waves-effect btn-large green btn-color"></a>
+            </div>
+            <div class="col s3">
+              <a id="blue" class="modal-action modal-close waves-effect btn-large blue btn-color"></a>
+            </div>
+            <div class="col s3">
+              <a id="white" class="modal-action modal-close waves-effect btn-large white btn-color"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%- include ../lib/js %>

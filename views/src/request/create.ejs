@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt" id="requestCreate">
+<head>
+  <%- include ../lib/meta %>
+  <title>Solicitação do presente</title>
+  <%- include ../lib/link %>
+</head>
+<body>
+  <%- include ../lib/navbar %>
+  <main>
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <div class="col s12">
+          <h3><%= gift.title %></h3>
+          <h5>Disponível: &nbsp; <%= gift.amount %> </h5>
+        </div>            
+      </div>  
+      <form class="col s12 " method="POST">
+        <div class="row">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="amount" name="request[amount]" type="text" class="validate" required>
+              <label id="lbAmount" for="amount">Quantidade</label>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col s12">
+              <button class="btn-large waves-effect waves-light full-width" type="submit">EFETUAR SOLICITAÇÃO</button>
+              <input type="hidden" name="_csrf" value="<%- _csrf %>">
+            </div>
+          </div>  
+          </div>
+        </div>  
+      </form>
+    </div>  
+  </div>
+  
+  </main>
+  <%- include ../lib/js %>

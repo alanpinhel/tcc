@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt" id="edit">
+<head>
+  <%- include ../lib/meta %>
+  <title>Edite seu presente</title>
+  <%- include ../lib/link %>
+</head>
+<body>
+  <%- include ../lib/navbar %>
+  <main>
+    <div class="container">
+      <div class="row center-align">
+        <h5 class="light">Edite seu presente!</h5>
+      </div>
+      <div class="row">
+        <form class="col s12 m8 offset-m2 l6 offset-l3" method="post" action="/gift/<%= gift._id %>/edit?_method=put" enctype="multipart/form-data">
+          <input type="hidden" name="_csrf" value="<%- _csrf %>">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="title" name="gift[title]" type="text" class="validate" required value="<%- gift.title %>">
+              <label id="lbTitle" for="title">Título</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="description" name="gift[description]" maxlength="500" minlength="10" type="text" class="materialize-textarea validate" length="500" required><%- gift.description %></textarea>
+              <label id="lbDescription" for="description">Descrição</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="amount" name="gift[amount]" type="text" class="validate" required value="<%- gift.amount %>">
+              <label id="lbAmount" for="amount">Quantidade</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <input id="type" type="hidden" value="<%- gift.type %>">
+              <label>Tipo</label>
+              <select id="selectType" name="gift[type]" class="browser-default" required>
+                <option value="1">Acessórios</option>
+                <option value="2">Roupas</option>
+                <option value="3">Beleza</option>
+                <option value="4">Calçados</option>
+                <option value="5">Bolsas</option>
+                <option value="6">Brinquedos</option>
+                <option value="7">Móveis</option>
+                <option value="8">Decoração</option>
+                <option value="9">Eletrodomésticos</option>
+                <option value="10">Informática</option>
+                <option value="11">Eletrônico</option>
+                <option value="12">Animais</option>
+                <option value="13">Outros</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="row">
+            <% for (var i = 0, len = gift.photos.length; i < len; i++) { %>
+              <div class="col s6">
+                <img class="responsive-img" src="<%- gift.photos[i].path %>">
+                <a href="/gift/<%- gift._id %>/photo/<%- gift.photos[i]._id %>" class="btn waves-effect">Excluir</a>
+              </div>
+            <% } %>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <div class="progress hide" id="progressBar">
+                <div class="indeterminate"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>SELECIONAR</span>
+                  <input type="file" name="photo" id="photo" accept="image/*" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path" id="path" type="text" placeholder="Envie uma ou várias fotos">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <button id="submit" type="submit" class="btn-large waves-effect full-width">EDITAR PRESENTE</button>
+            </div>
+          </div>
+        </form>  
+      </div>
+    </div>
+  </main>
+  <%- include ../lib/js %>

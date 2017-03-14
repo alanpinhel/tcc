@@ -1,0 +1,163 @@
+#home {
+  .parallax-container {
+    height: 100vh;
+  }
+  .title {
+    font-family: "Righteous";
+    text-align: center;
+    color: #393738;
+  }
+  .margin {
+    margin-top: 5.625em;
+    margin-bottom: 4.625em;
+  }
+  
+  .icon-m1 {
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+  
+  .icon-m2 {
+    margin-top: 7em;
+  }
+  
+  .icon-color {
+    color: #00A7F4;  
+  }
+  
+  .m-text {
+    margin-top: 1.75em;
+    margin-bottom: 1.75em;
+  }
+  
+  .v-text {
+    width: 100%;
+    height: 100vh;
+  }
+
+  @media only screen and (max-width: 600px){
+    .margin-btn {
+    	margin-top: 25px;
+      margin-bottom: 10px;	
+    }
+    
+    .welcome {
+      color: white;
+      font-size: 2.2em;
+      font-family: "Righteous";
+    }      
+  }
+  
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    .welcome {
+      color: white;
+      font-size: 3em;
+      font-family: "Righteous";
+    }
+  }
+  
+  @media only screen and (min-width: 993px) {
+    .welcome {
+      color: white;
+      font-size: 4em;
+      font-family: "Righteous";
+    }
+  }
+}
+
+
+/*#home {
+  .graphic {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("/img/graphics_any_things_513x512.png");
+  }
+  
+  .tittle {
+    font-family: "Righteous";
+    color: #393738;
+    margin: 0;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .graphic {
+      width: 100%;
+      height: 256px;
+      margin-top: 4.625em;
+      background-size: contain;
+    }
+    
+    .tittle, h4 {
+      text-align: center;
+    }
+    
+    .context {
+      margin-top: 4.625em;
+    }
+    
+    .margin-top-bottom {
+      margin-top: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 992px) {
+    .graphic {
+      width: 100%;
+      height: 382px;
+      margin-top: 3.625em;
+      background-size: contain;
+    }
+    
+    .tittle, h4 {
+      text-align: center;
+    }
+    
+    .context {
+      margin-top: 3.625em; 
+    }
+
+    .margin-top-bottom {
+      margin-top: 10px;
+    }    
+  }
+
+  @media only screen and (min-width: 993px) and (max-width: 1600px) {
+    .graphic {
+      width: 100%;
+      height: 513px;
+      margin-top: 4.625em;
+    }
+  
+    .tittle {
+      font-size: 4.625em;
+    }
+    
+    .context {
+      margin-top: 4.625em;
+      
+      h4 {
+        margin: 1.563em 0;
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 1601px) {
+    .graphic {
+      width: 100%;
+      height: 513px;
+      margin-top: 13em;
+    }
+  
+    .tittle {
+      font-size: 4.625em;
+    }
+    
+    .context {
+      margin-top: 13em;
+      
+      h4 {
+        margin: 1.563em 0;
+      }
+    }
+  }  
+}*/
